@@ -1,5 +1,6 @@
 package com.example.springDataTrain.model.dto;
 
+import com.example.springDataTrain.model.entity.Department;
 import com.example.springDataTrain.model.entity.Employee;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +21,7 @@ public class EmployeeDTO {
     private String LastName;
     private String firstName;
     private Double Salary;
+    private Department department;
 
 
     public static EmployeeDTO toDTO(Employee employee) {
@@ -27,7 +29,7 @@ public class EmployeeDTO {
                 .id(employee.getId())
                 .LastName(employee.getLastName())
                 .firstName(employee.getFirstName())
-                .Salary(employee.getSalary())
+                .Salary(employee.getSalary()).department(employee.getDepartment())
                 .build();
     }
 
@@ -36,7 +38,7 @@ public class EmployeeDTO {
                 .id(dto.getId())
                 .LastName(dto.getLastName())
                 .firstName(dto.getFirstName())
-                .Salary(dto.getSalary())
+                .Salary(dto.getSalary()).department(dto.getDepartment())
                 .build();
     }
 }

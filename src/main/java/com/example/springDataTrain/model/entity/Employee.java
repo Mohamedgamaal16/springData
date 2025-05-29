@@ -19,4 +19,7 @@ public class Employee {
     private String firstName;
     private Double Salary;
 
+    @ManyToOne
+    @JoinColumn(name = "departmentId")
+    private Department department;
 }
